@@ -45,7 +45,7 @@ function Home() {
           <button>Get a Sneak Peak</button>
         </div>
         <br />
-        <img id="lnd_pge" src={landing} alt="" />
+        <img id="lnd_pge" src={landing} alt="" draggable="true" />
       </main>
     </section>
   );

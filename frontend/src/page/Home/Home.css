@@ -5,6 +5,12 @@
   background-color: #ffffff;
 }
 
+*::selection {
+  background: #000000;
+  color: #FFC300;
+  text-shadow: none;
+}
+
 body {
   color: #213547;
   background: #ffc71f;
