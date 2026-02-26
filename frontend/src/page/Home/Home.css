@@ -12,6 +12,7 @@
 }
 
 body {
+    /* border-radius: ; */
   color: #213547;
   background: #ffc71f;
   display: flex;
@@ -22,27 +23,14 @@ body {
   cursor: none;
 }
 
+
+
 .cursor-dot {
-  width: 8px;
-  height: 8px;
   background: white;
-  border-radius: 50%;
-  position: fixed;
-  pointer-events: none;
-  transform: translate(-50%, -50%);
-  z-index: 9999;
 }
 
 .cursor-ring {
-  width: 35px;
-  height: 35px;
   border: 2px solid white;
-  border-radius: 50%;
-  position: fixed;
-  pointer-events: none;
-  transform: translate(-50%, -50%);
-  transition: transform 0.15s ease-out;
-  z-index: 9998;
 }
 
 button {
@@ -65,7 +53,9 @@ button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
 }
 
+
 #home_page_outer {
+    border-radius: 0.35rem;
   background: #ffc71f;
   display: flex; /* use flex instead of grid for better centering */
   justify-content: center; /* center inner content horizontally */
@@ -170,4 +160,12 @@ img#lnd_pge {
   background: rgba(255, 255, 255, 0.2);
   border-color: rgba(255, 255, 255, 0.5);
   color: #ffffff;
+}
+
+#fig-ico{
+    color: rgba(0, 0, 0, 0.728)
+}
+
+#fig-ico:hover{
+    color: rgba(0, 0, 0, 0.386)
 }
