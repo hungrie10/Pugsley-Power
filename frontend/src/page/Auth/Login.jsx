@@ -5,9 +5,9 @@ import { useState, useEffect } from "react";
 
 function Login() {
   const [email, setEmail] = useState("");
-  const [create_a_password, set_create_a_password] = useState("");
+  const [create_a_password, set_create_a_password] = useState(".");
   const [confirm_a_password, set_confirm_a_password] = useState("");
-  const [match, setMatch] = useState(true);
+  const [match, setMatch] = useState(false);
 
   useEffect(() => {
     if (create_a_password === "" && confirm_a_password === "") {
@@ -18,8 +18,16 @@ function Login() {
   }, [create_a_password, confirm_a_password]);
 
   function handleSubmit(e) {
-    e.preventDefault();
-    location.assign("/dashboard");
+      e.preventDefault();
+      
+
+      if (match) {
+          location.assign("/dashboard");
+          
+    }
+      else {
+          return
+    }
   }
 
   function create_my_password(e) {
@@ -71,8 +79,8 @@ function Login() {
           <span>
             <label htmlFor="">Confirm Password</label>
             <br />
-            <input
-              type="text"
+            <input 
+              type="password"
               name=""
               id=""
               onChange={(e) => {
