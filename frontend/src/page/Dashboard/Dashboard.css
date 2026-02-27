@@ -43,8 +43,7 @@
   list-style: none;
 }
 
-#dashboard_outer
-#dashboard_inner {
+#dashboard_outer #dashboard_inner {
   background: white;
   border-radius: 0.35rem;
   padding: 10px;
@@ -123,4 +122,99 @@
   box-shadow: 0 3px 10px rgba(0, 0, 0, 0.12);
   border-radius: 6px; /* soft edges */
   background-color: #fff; /* make sure shadow is visible */
+}
+
+#aside-1 #days_message #message {
+  display: flex;
+  color: #000000;
+  opacity: 0.5;
+}
+
+#aside-1 .greeting {
+  padding: 4%;
+}
+
+#aside-1 #day_of_the_week h2 {
+  font-size: 2vw;
+}
+
+#aside-1 #control_btn {
+  gap: 2%;
+  height: 100%;
+  margin-top: 3%;
+  display: flex;
+  flex-direction: column;
+}
+
+#aside-1 #control_btn button {
+  margin: 0;
+  border: solid 0.2px;
+  border-radius: 0.25rem;
+  padding: 0;
+}
+
+.calendar {
+  padding: 3%;
+  display: flex;
+  flex-direction: column;
+}
+
+#calendar_prt1 h2 {
+  font-size: 1vw;
+}
+
+#calendar_prt1 button {
+  border: solid;
+}
+
+#calendar_prt1 p {
+  font-size: 1vw;
+  color: #000000a9;
+}
+
+#calendar_prt1 #cal_cap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  justify-content:space-between;
+}
+
+#calendar_num {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr); /* 6 columns always */
+  gap: 5px;                               /* space between boxes */
+  height: 100%;                            /* take full height of container */
+  grid-auto-rows: 1fr;                     /* rows share remaining space equally */
+}
+
+#calendar_num .number {
+  border: 1px solid black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.8vw;   /* adjust to keep numbers readable as they shrink */
+}
+
+
+.box.avatar{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 3vh;
+  align-items: center;
+  padding: 3%;
+}
+
+.box.avatar img{
+  width: 20%;
+}
+
+.box.avatar h2{
+  font-size: 1vw;
+}
+
+.box.avatar button{
+  width: 100%;
+  border-radius: 0.25rem;
+  border: solid 0.25px;
 }
