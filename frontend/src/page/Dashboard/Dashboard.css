@@ -381,7 +381,7 @@ img[alt="fire"] {
 }
 
 #inner_todo span {
-  height: 40%;
+  height: 30%;
   border: solid 0.24px;
   padding: 1%;
   display: flex;
@@ -389,4 +389,14 @@ img[alt="fire"] {
   align-items: center;
 }
 
-#inner_todo {}
+#inner_todo #next_prev {
+    display: flex;
+    justify-content: center;
+    gap: 3%;
+}
+
+#inner_todo #next_prev button{
+  border: solid black;
+  background: #000;
+  color: white;
+}

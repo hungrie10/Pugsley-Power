@@ -1,6 +1,15 @@
 import React from "react";
+import { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faGear, faPenFancy, faDroplet, faWind, faCloud } from "@fortawesome/free-solid-svg-icons";
+import {
+  faGear,
+  faPenFancy,
+  faDroplet,
+  faWind,
+  faCloud,
+  faArrowLeft,
+  faArrowRight,
+} from "@fortawesome/free-solid-svg-icons";
 import Pointer from "./../../component/Pointer";
 import { faLightbulb, faMeh } from "@fortawesome/free-regular-svg-icons";
 import "./Dashboard.css";
@@ -8,8 +17,16 @@ import avatar from "./../../assets/avatar.png";
 import fire from "./../../assets/fire.png";
 import cloud from "./../../assets/cute_cloud.png";
 
-
 function Dashboard() {
+  const [tasks, setTasks] = useState([
+    "Grind LeetCode",
+    "Study Java",
+    "Build React Project",
+    "Read DSA",
+    "Work on Backend",
+    "Revise Networking",
+  ]);
+
   const the_date = new Date();
   const day_in_numbers = the_date.getDay();
 
@@ -40,6 +57,24 @@ function Dashboard() {
     default:
       day_in_words = "Unknown Day";
   }
+
+  const [startIndex, setStartIndex] = useState(0);
+
+  const itemsPerPage = 3;
+
+  const handleNext = () => {
+    if (startIndex + itemsPerPage < tasks.length) {
+      setStartIndex(startIndex + itemsPerPage);
+    }
+  };
+
+   const handlePrevious = () => {
+    setStartIndex((prev) =>
+      prev - itemsPerPage >= 0
+        ? prev - itemsPerPage
+        : prev
+    );
+  };
 
   return (
     <section id="dashboard_outer">
@@ -178,47 +213,48 @@ function Dashboard() {
                   </span>
                 </div>
 
-                   <div id="add_info">
+                <div id="add_info">
                   {/* <hr /> */}
                   <div id="actual_add_info">
                     <span>
-                      <FontAwesomeIcon icon={faDroplet}/>
+                      <FontAwesomeIcon icon={faDroplet} />
                       <p>64</p>
                     </span>
                     <span>
-                      <FontAwesomeIcon icon={faWind}/>
+                      <FontAwesomeIcon icon={faWind} />
                       <p>64</p>
                     </span>
                     <span>
-                      <FontAwesomeIcon icon={faCloud}/>
+                      <FontAwesomeIcon icon={faCloud} />
                       <p>64</p>
                     </span>
                   </div>
                 </div>
               </article>
-              
+
               <article id="outer_todo">
-
                 <div id="inner_todo">
-                  <span>
-                    
-                        <label htmlFor="">Grind LeetCode</label>
-                        <input type="checkbox" name="" id="" />
-                  </span>
-                  <span>
+                  {tasks
+                    .slice(startIndex, startIndex + itemsPerPage)
+                    .map((task, index) => (
+                      <span key={index}>
+                        <label>{task}</label>
+                        <input type="checkbox" />
+                      </span>
+                    ))}
+                  
+                  <div id="next_prev">
+                <button onClick={handlePrevious} style={{ marginTop: "10px" }}>
 
-                        <label htmlFor="">Grind LeetCode</label>
-                        <input type="checkbox" name="" id="" />
-                  </span>
-                  <span>
+                      <FontAwesomeIcon icon={faArrowLeft}/>
+                </button>
+                <button onClick={handleNext} style={{ marginTop: "10px" }}>
 
-                        <label htmlFor="">Grind LeetCode</label>
-                        <input type="checkbox" name="" id="" />
-                  </span>
+                      <FontAwesomeIcon icon={faArrowRight}/>
+                </button>
+                  </div>
                 </div>
-             
               </article>
-            
             </div>
 
             <div class="house">
