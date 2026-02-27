@@ -1,10 +1,13 @@
 import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faGear, faPenFancy } from "@fortawesome/free-solid-svg-icons";
+import { faGear, faPenFancy, faDroplet, faWind, faCloud } from "@fortawesome/free-solid-svg-icons";
 import Pointer from "./../../component/Pointer";
 import { faLightbulb, faMeh } from "@fortawesome/free-regular-svg-icons";
 import "./Dashboard.css";
 import avatar from "./../../assets/avatar.png";
+import fire from "./../../assets/fire.png";
+import cloud from "./../../assets/cute_cloud.png";
+
 
 function Dashboard() {
   const the_date = new Date();
@@ -64,6 +67,7 @@ function Dashboard() {
         </header>
 
         <main id="main_page">
+          {/* The Side Bar #1 */}
           <aside id="aside-1">
             {/* Pugsley says hello 👋 */}
             <div className="box greeting">
@@ -142,14 +146,104 @@ function Dashboard() {
               <h2>Create an Avatar</h2>
               <img src={avatar} alt="" />
               <button>
-                <FontAwesomeIcon icon={faPenFancy}/>
+                <FontAwesomeIcon icon={faPenFancy} />
               </button>
             </div>
           </aside>
 
+          {/* The Side Bar #1 */}
           <aside id="aside-2">
-            <div class="house"></div>
-            <div class="house"></div>
+            <div class="house split">
+              <article>
+                {/* This part let's you pick a country */}
+                <div id="pick_country">
+                  <p>Weather</p>
+
+                  <span id="search_me">
+                    <input type="text" />
+                  </span>
+                </div>
+
+                <div id="display_the_weather">
+                  <span>
+                    <h1>12 °C</h1>
+                    <h2>Cloudy</h2>
+                    <p>
+                      Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    </p>
+                  </span>
+
+                  <span>
+                    <img src={cloud} alt="" />
+                  </span>
+                </div>
+
+                   <div id="add_info">
+                  {/* <hr /> */}
+                  <div id="actual_add_info">
+                    <span>
+                      <FontAwesomeIcon icon={faDroplet}/>
+                      <p>64</p>
+                    </span>
+                    <span>
+                      <FontAwesomeIcon icon={faWind}/>
+                      <p>64</p>
+                    </span>
+                    <span>
+                      <FontAwesomeIcon icon={faCloud}/>
+                      <p>64</p>
+                    </span>
+                  </div>
+                </div>
+              </article>
+              
+              <article id="outer_todo">
+
+                <div id="inner_todo">
+                  <span>
+                    
+                        <label htmlFor="">Grind LeetCode</label>
+                        <input type="checkbox" name="" id="" />
+                  </span>
+                  <span>
+
+                        <label htmlFor="">Grind LeetCode</label>
+                        <input type="checkbox" name="" id="" />
+                  </span>
+                  <span>
+
+                        <label htmlFor="">Grind LeetCode</label>
+                        <input type="checkbox" name="" id="" />
+                  </span>
+                </div>
+             
+              </article>
+            
+            </div>
+
+            <div class="house">
+              <article>
+                <div>
+                  <img src={fire} alt="fire" />
+                </div>
+
+                <div>
+                  <h2>View your Streak</h2>
+                  <p>
+                    Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                    Consequuntur repellendus nobis sint nihil doloremque
+                    assumenda rem amet accusantium est voluptas?
+                  </p>
+
+                  <div id="streak_btn">
+                    <button></button>
+                    <button></button>
+                  </div>
+                </div>
+              </article>
+
+              <article></article>
+            </div>
           </aside>
         </main>
       </section>
